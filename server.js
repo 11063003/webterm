@@ -3,7 +3,7 @@ var path = require('path'),
     express = require('express'),
     app = express(),
     server = require('http').createServer(app),
-    io = require('socket.io')(80);
+    io = require('socket.io')(8000); // Don't Bind below 1024 as Non root ( heroku )
 
 app.use(express.static('public'))
 app.get('/', function (req, res) {
